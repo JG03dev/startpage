@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Start Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="svg-left">
+        <img src="openSUSE_tail.svg" alt="Left SVG">
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="time" id="time"></div>
+            <div class="date" id="date"></div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search the web..." id="search-input">
+        </div>
+        <div class="links">
+            <div class="row">
+                <a href="https://www.youtube.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/youtube-play.png"/>Youtube</a>
+                <a href="https://www.github.com" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/github.png"/>Github</a>
+                <a href="https://www.stackoverflow.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/stackoverflow.png"/>Stackoverflow</a>
+                <a href="https://www.reddit.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/reddit.png"/>Reddit</a>
+            </div>
+            <div class="row">
+                <a href="https://www.twitter.com" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/>Twitter</a>
+                <a href="https://mail.google.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/gmail.png"/>Mail</a>
+                <a href="https://www.google.com/maps" target="_blank"><img src="https://img.icons8.com/color/48/000000/google-maps.png"/>Maps</a>
+                <a href="https://chat.openai.com" target="_blank"><img src="https://img.icons8.com/?size=100&id=ka3InxFU3QZa&format=png&color=000000"/>Chat</a>
+            </div>
+        </div>
+        <div class="quote" id="quote">"The best way to predict the future is to create it." — Peter Drucker</div>
+    </div>
+    <div class="svg-right">
+        <img src="button-colour.svg" alt="Right SVG">
+    </div>
+
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            const dateElement = document.getElementById('date');
+            const now = new Date();
+            timeElement.textContent = now.toLocaleTimeString();
+            dateElement.textContent = now.toLocaleDateString();
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Allow search input to work like a search bar
+        document.getElementById('search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = e.target.value;
+                window.location.href = `https://duckduckgo.com/?q=${query}`;
+            }
+        });
+    </script>
+</body>
+</html>
