@@ -1,0 +1,8 @@
+GREN: #729b79
+WHITE: #e1e4dc
+BLACK (bg): #2e2c2f
+BLUE: #5292c6
+L_BLUE: #489ca5
+PURPLE: #8c6aa8
+YELLOW: #ccaa6c
+RED: #ba5860
